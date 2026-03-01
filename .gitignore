@@ -1,0 +1,13 @@
+# Build artifacts
+*.o
+ptr
+
+# Documentation for AI agents
+AGENTS.md
+
+# Backup files
+*~
+*.bak
+
+# Core dumps
+core
