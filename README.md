@@ -21,7 +21,7 @@ predicting truth is a way to get rid of GIGO. You can use it in the real world o
 truth.h and ptr.c compile with a simple gcc ptr.c -o ptr -lm if and only if you place the truth.h in the same project directory. 
 If you run as it stands, It will use rdrand, random number from your computer as input. It should be easily changed to some other input.
 
-This ptr finds the truth existing at equilibrium. Truth at 1st order and beyond is in the thinking pot. To play with it, try this, assumming Linux usig bash shell:
+This ptr finds the truth existing at equilibrium. Truth at 1st order and beyond is in the thinking pot. To play with it, try this, assumming Linux using bash shell:
 
 while sleep 60; do ./ptr | espeak; done
 
