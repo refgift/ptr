@@ -17,3 +17,9 @@ ptr_cpp:	ptr.cpp
 
 ppr_cpp:	ppr.cpp
 	g++ $< -o $@ -lm
+
+truth_cpp:	truth.cpp
+	g++ $< -o $@ -lm
+
+perfect_cpp:	perfect.cpp
+	g++ $< -o $@ -lm
