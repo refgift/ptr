@@ -13,12 +13,12 @@ I began my computer journey in 1977 at Colony Square in midtown Atlanta with an 
 This project implements two perceptron systems trained on hardware-generated random numbers (rdrand):
 
 ### Truth System
-- `ptr.c`: Truth predictor implementation
+- `ptr.c` / `ptr.cpp`: Truth predictor implementation (C and C++ versions)
 - `truth.h`: Trained model weights and biases for truth prediction
 - `truth.c`: Training program that generates truth.h
 
 ### Perfect System
-- `ppr.c`: Perfect predictor implementation
+- `ppr.c` / `ppr.cpp`: Perfect predictor implementation (C and C++ versions)
 - `perfect.h`: Trained model weights and biases for perfect prediction
 - `perfect.c`: Training program that generates perfect.h
 
@@ -32,13 +32,26 @@ Perceptrons offer simplicity that embodies Occam's Razor - the principle that th
 ## Building
 
 ### Truth System
-Compile the truth predictor:
+Compile the C truth predictor:
 
 ```bash
 gcc ptr.c -o ptr -lm
 ```
 
-Or compile the truth trainer to regenerate truth.h:
+Or the C++ version:
+
+```bash
+g++ ptr.cpp -o ptr_cpp -lm
+```
+
+Or use Makefile:
+
+```bash
+make ptr      # C version
+make ptr_cpp  # C++ version
+```
+
+Compile the truth trainer to regenerate truth.h:
 
 ```bash
 gcc truth.c -o truth -lm
@@ -46,20 +59,32 @@ gcc truth.c -o truth -lm
 ```
 
 ### Perfect System
-Compile the perfect predictor:
+Compile the C perfect predictor:
 
 ```bash
 gcc ppr.c -o ppr -lm
 ```
 
-Or compile the perfect trainer to regenerate perfect.h:
+Or the C++ version:
+
+```bash
+g++ ppr.cpp -o ppr_cpp -lm
+```
+
+Or use Makefile:
+
+```bash
+make ppr_cpp  # C++ version
+```
+
+Compile the perfect trainer to regenerate perfect.h:
 
 ```bash
 gcc perfect.c -o perfect -lm
 ./perfect  # generates perfect.h
 ```
 
-Ensure the corresponding header files (.h) are in the same directory as their respective C files.
+Ensure the corresponding header files (.h) are in the same directory as their respective source files.
 
 ## Usage
 
