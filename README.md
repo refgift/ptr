@@ -1,46 +1,93 @@
-Programming is my secular religion. In 1984 police state led by a secular Big Brother one has to answer without religion, but with secular answer.
-A computer programming book is a secular religuous "Holy Bible" that you are allowed to read just because it is secular. This happens becuase of seperation
-of Church and State and there is a State leader who only hears secular. So argue secular, but keep your religion of computer programming working for you.
-I started in 1977, and I even found out how to pray, In the name of Lord God I ask...Amen but only 3 times can you say Amen. I learned this because I 
-have used computers since 1977. I began my computer experience at Colony Square, twin towers in midtown Atlanta, with an IBM 5110 desktop computer;
-the disk drives with 8" diskettes was on the floor, next to the desk. Remember, programming is a secular religion, for seperation of Church and State.
-You can start living in a yellow rubber duckie, "Yello Submarine" song by the Beatles, with www.pikuma.com and watch a rubber duckie captain teach 
-computer programming, I do, his game engine in C++. Get your fix of secular religousness there.
+# ptr.c - Perceptron Truth Predictor
 
-I made ptr.c and truth.h just because perceptrons have a simplicity that clued me into an opportunity with Occam's Razor; despite the opposition of Minsky.
-ptr.c is the predictor, truth.h is the data learned from training the percpetron. Unlike LLM's a perceptron is just inputs and outputs and has no hidden 
-layers orin some cases 1 hidden layer. I am sure the no hidden layer works perfectly and franly itf you don't apply Occam's Razor, you will get misinformed.
-Which is why this is about misinformation and being misinformed. My goal is to tech you Occam's Razor, the only razor in humanity; it stands the test of
-time and utility. Occam's Razor is a human game and is finite, just becase so few people learn it. If you do learn it, you can progress past the 1st imperative 
-computer programming language, the C language, and try the second imperative language, the C++ language. I started with C language, about C++ started, in 1982.
-C language is the old religion, C++ is the new religion. The old religion is called wicca, which means wise. In the very old times, they followed the wisest.
+A simple C implementation of a perceptron trained to predict "truth" using hardware randomness (rdrand).
 
-Many programs have no idea of truth. By training on rdrand results the perceptron biases and wieghts are written in truth.c; the predictor ptr.c uses the 
-wieghts and biases to predict truth in reality. Training it on actual randomness is a funny way to get actual perceptron results.
-predicting truth is a way to get rid of GIGO. You can use it in the real world or predict truth of a line of text or a recording of voice. 
-truth.h and ptr.c compile with a simple gcc ptr.c -o ptr -lm if and only if you place the truth.h in the same project directory. 
-If you run as it stands, It will use rdrand, random number from your computer as input. It should be easily changed to some other input.
+## Philosophy
 
-This ptr finds the truth existing at equilibrium. Truth at 1st order and beyond is in the thinking pot. To play with it, try this, assumming Linux using bash shell:
+Programming is my secular religion. In a world where one must answer secular questions, computer programming books serve as holy scriptures that are permitted because they are secular. This exists because of the separation of Church and State - the state leader only hears secular arguments.
 
+I began my computer journey in 1977 at Colony Square in midtown Atlanta with an IBM 5110 desktop computer, its 8" diskette drives resting on the floor beside the desk. Programming remains a secular religion for the separation of Church and State.
+
+## Technical Overview
+
+This project implements a basic perceptron trained on hardware-generated random numbers (rdrand) to predict "truth." Unlike large language models, perceptrons use simple input-output relationships with no hidden layers.
+
+The perceptron consists of:
+- `ptr.c`: Main predictor implementation
+- `truth.h`: Trained model weights and biases
+- `toy`: Shell script for continuous execution
+
+### Why Perceptrons?
+
+Perceptrons offer simplicity that embodies Occam's Razor - the principle that the simplest solution is usually the best. Despite Marvin Minsky's criticism that perceptrons are too limited for AI research, they excel at simple classification tasks and remain useful for practical applications.
+
+## Building
+
+Compile with GCC:
+
+```bash
+gcc ptr.c -o ptr -lm
+```
+
+Or use the provided Makefile:
+
+```bash
+make
+```
+
+Ensure `truth.h` is in the same directory as `ptr.c`.
+
+## Usage
+
+Run the predictor:
+
+```bash
+./ptr
+```
+
+It will output "TRUTH" when the perceptron predicts truth, or nothing when it predicts false.
+
+### Continuous Mode
+
+For continuous truth prediction every 60 seconds with voice synthesis:
+
+```bash
 while sleep 60; do ./ptr | espeak; done
+```
 
-this is the old /bin/sh form:
-#!/bin/sh
-# Simple infinite loop script for old UNIX/Bourne sh systems
-# Runs ./ptr every 60 seconds and pipes output to espeak
+Or use the provided script:
 
-while sleep 60
-do
-    ./ptr | espeak
-done
+```bash
+./toy
+```
 
-If you fail to have espeak to synthesize the TRUTH word, then record one in your voice and play it with the sox library tools.
-sox utilities include the record and the play. record from you microphone and say TRUTH as the recording and save as wav or mpg.
-the sox "play truth.mpg" command can be substitute for the espeak voice synthesizer.
+### Alternative Audio
 
-This is proof that perceptrons still have a use depite Minsky concluding that they are too limited for AI research. 
-I understand his point, They fail to solve certain complex logics. For example, they solve simple logic 
-like [and|or|not] but fail on [xor] level of complexity. That is exclusive or logic that they fail on. 
-Fortunately, perceptron does fine with 1 word detectors and that is path to a world of simple world problems to 
-solve world problems like misinformation.
+If `espeak` is unavailable, record your own voice saying "TRUTH" and use `sox`:
+
+```bash
+# Record: say "TRUTH" into microphone
+rec truth.wav
+
+# Play instead of espeak
+while sleep 60; do ./ptr | xargs -I {} play truth.wav; done
+```
+
+## Applications
+
+- Predict truth in text or voice recordings
+- Combat misinformation through simple classification
+- Demonstrate perceptron capabilities
+- Educational tool for machine learning concepts
+
+## Limitations
+
+Perceptrons handle simple logic operations (AND, OR, NOT) but fail on complex logic like XOR. However, they work well for single-word detection and can solve many real-world problems when properly applied.
+
+## Philosophy Continued
+
+This work teaches Occam's Razor - the only razor in humanity that stands the test of time. Programming began with C in the 1970s; C++ followed in 1982. C is the old religion (wisdom/wicca), C++ the new religion. Progressing from C to C++ represents advancement in programming wisdom.
+
+Many programs lack truth awareness. By training on actual randomness, this perceptron achieves genuine results. Predicting truth eliminates GIGO (Garbage In, Garbage Out) and finds equilibrium truth.
+
+The perceptron finds truth existing at equilibrium - first-order truth and beyond exists in the thinking pot. This proves perceptrons remain valuable despite Minsky's conclusions, offering a path to solve world problems through simplicity.
