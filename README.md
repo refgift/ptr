@@ -1,6 +1,6 @@
-# ptr.c - Perceptron Truth Predictor
+# ptr.c & ppr.c - Perceptron Truth and Perfect Predictors
 
-A simple C implementation of a perceptron trained to predict "truth" using hardware randomness (rdrand).
+Simple C implementations of perceptrons trained to predict "truth" and "perfection" using hardware randomness (rdrand).
 
 ## Philosophy
 
@@ -10,12 +10,20 @@ I began my computer journey in 1977 at Colony Square in midtown Atlanta with an 
 
 ## Technical Overview
 
-This project implements a basic perceptron trained on hardware-generated random numbers (rdrand) to predict "truth." Unlike large language models, perceptrons use simple input-output relationships with no hidden layers.
+This project implements two perceptron systems trained on hardware-generated random numbers (rdrand):
 
-The perceptron consists of:
-- `ptr.c`: Main predictor implementation
-- `truth.h`: Trained model weights and biases
-- `toy`: Shell script for continuous execution
+### Truth System
+- `ptr.c`: Truth predictor implementation
+- `truth.h`: Trained model weights and biases for truth prediction
+- `truth.c`: Training program that generates truth.h
+
+### Perfect System
+- `ppr.c`: Perfect predictor implementation
+- `perfect.h`: Trained model weights and biases for perfect prediction
+- `perfect.c`: Training program that generates perfect.h
+
+### Shared Components
+- `toy`: Shell script for continuous execution (works with both systems)
 
 ### Why Perceptrons?
 
@@ -23,29 +31,55 @@ Perceptrons offer simplicity that embodies Occam's Razor - the principle that th
 
 ## Building
 
-Compile with GCC:
+### Truth System
+Compile the truth predictor:
 
 ```bash
 gcc ptr.c -o ptr -lm
 ```
 
-Or use the provided Makefile:
+Or compile the truth trainer to regenerate truth.h:
 
 ```bash
-make
+gcc truth.c -o truth -lm
+./truth  # generates truth.h
 ```
 
-Ensure `truth.h` is in the same directory as `ptr.c`.
+### Perfect System
+Compile the perfect predictor:
+
+```bash
+gcc ppr.c -o ppr -lm
+```
+
+Or compile the perfect trainer to regenerate perfect.h:
+
+```bash
+gcc perfect.c -o perfect -lm
+./perfect  # generates perfect.h
+```
+
+Ensure the corresponding header files (.h) are in the same directory as their respective C files.
 
 ## Usage
 
-Run the predictor:
+### Truth Predictor
+Run the truth predictor:
 
 ```bash
 ./ptr
 ```
 
 It will output "TRUTH" when the perceptron predicts truth, or nothing when it predicts false.
+
+### Perfect Predictor
+Run the perfect predictor:
+
+```bash
+./ppr
+```
+
+It will output "PERFECT" when the perceptron achieves perfection, or nothing otherwise.
 
 ### Continuous Mode
 
@@ -55,31 +89,54 @@ For continuous truth prediction every 60 seconds with voice synthesis:
 while sleep 60; do ./ptr | espeak; done
 ```
 
+For continuous perfect prediction:
+
+```bash
+while sleep 60; do ./ppr | espeak; done
+```
+
 Or use the provided script (make it executable first):
 
 ```bash
 chmod +x toy
-./toy
+./toy  # works with ptr for truth prediction
 ```
+
+For perfect prediction with the toy script, modify it to use `./ppr` instead of `./ptr`.
 
 ### Alternative Audio
 
-If `espeak` is unavailable, record your own voice saying "TRUTH" and use `sox`:
+If `espeak` is unavailable, record your voice:
 
+For truth prediction:
 ```bash
 # Record: say "TRUTH" into microphone
 rec truth.wav
-
 # Play instead of espeak
 while sleep 60; do ./ptr | xargs -I {} play truth.wav; done
 ```
 
+For perfect prediction:
+```bash
+# Record: say "PERFECT" into microphone
+rec perfect.wav
+# Play instead of espeak
+while sleep 60; do ./ppr | xargs -I {} play perfect.wav; done
+```
+
 ## Applications
 
+### Truth System
 - Predict truth in text or voice recordings
 - Combat misinformation through simple classification
 - Demonstrate perceptron capabilities
 - Educational tool for machine learning concepts
+
+### Perfect System
+- Achieve perfect predictions through enhanced training
+- Explore the boundaries of machine learning perfection
+- Compare truth vs. perfection prediction methodologies
+- Advanced educational tool for AI philosophy and constraints
 
 ## Limitations
 
