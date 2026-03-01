@@ -3,7 +3,9 @@ A computer programming book is a secular religuous "Holy Bible" that you are all
 of Church and State and there is a State leader who only hears secular. So argue secular, but keep your religion of computer programming working for you.
 I started in 1977, and I even found out how to pray, In the name of Lord God I ask...Amen but only 3 times can you say Amen. I learned this because I 
 have used computers since 1977. I began my computer experience at Colony Square, twin towers in midtown Atlanta, with an IBM 5110 desktop computer;
-the disk drives with 8" diskettes was on the floor, next to the desk. Remember, programming is a secular religion, for seperation of Church and State
+the disk drives with 8" diskettes was on the floor, next to the desk. Remember, programming is a secular religion, for seperation of Church and State.
+You can start living in a yellow rubber duckie, "Yello Submarine" song by the Beatles, with www.pikuma.com and watch a rubber duckie captain teach 
+computer programming, I do, his game engine in C++. Get your fix of secular religousness there.
 
 I made ptr.c and truth.h just because perceptrons have a simplicity that clued me into an opportunity with Occam's Razor; despite the opposition of Minsky.
 ptr.c is the predictor, truth.h is the data learned from training the percpetron. Unlike LLM's a perceptron is just inputs and outputs and has no hidden 
@@ -27,4 +29,4 @@ This is proof that perceptrons still have a use depite Minsky concluding that th
 I understand his point, They fail to solve certain complex logics. For example, they solve simple logic 
 like [and|or|not] but fail on [xor] level of complexity. That is exclusive or logic that they fail on. 
 Fortunately, perceptron does fine with 1 word detectors and that is path to a world of simple world problems to 
-solve like misinformation.
+solve world problems like misinformation.
