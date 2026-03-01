@@ -25,6 +25,20 @@ This ptr finds the truth existing at equilibrium. Truth at 1st order and beyond 
 
 while sleep 60; do ./ptr | espeak; done
 
+this is the old /bin/sh form:
+#!/bin/sh
+# Simple infinite loop script for old UNIX/Bourne sh systems
+# Runs ./ptr every 60 seconds and pipes output to espeak
+
+while sleep 60
+do
+    ./ptr | espeak
+done
+
+If you fail to have espeak to synthesize the TRUTH word, then record one in your voice and play it with the sox library tools.
+sox utilities include the record and the play. record from you microphone and say TRUTH as the recording and save as wav or mpg.
+the sox "play truth.mpg" command can be substitute for the espeak voice synthesizer.
+
 This is proof that perceptrons still have a use depite Minsky concluding that they are too limited for AI research. 
 I understand his point, They fail to solve certain complex logics. For example, they solve simple logic 
 like [and|or|not] but fail on [xor] level of complexity. That is exclusive or logic that they fail on. 
