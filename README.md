@@ -15,12 +15,12 @@ This project implements two perceptron systems trained on hardware-generated ran
 ### Truth System
 - `ptr.c` / `ptr.cpp`: Truth predictor implementation (C and C++ versions)
 - `truth.h`: Trained model weights and biases for truth prediction
-- `truth.c`: Training program that generates truth.h
+- `truth.c` / `truth.cpp`: Training programs that generate truth.h (C and C++ versions)
 
 ### Perfect System
 - `ppr.c` / `ppr.cpp`: Perfect predictor implementation (C and C++ versions)
 - `perfect.h`: Trained model weights and biases for perfect prediction
-- `perfect.c`: Training program that generates perfect.h
+- `perfect.c` / `perfect.cpp`: Training programs that generate perfect.h (C and C++ versions)
 
 ### Shared Components
 - `toy`: Shell script for continuous execution (works with both systems)
@@ -54,8 +54,16 @@ make ptr_cpp  # C++ version
 Compile the truth trainer to regenerate truth.h:
 
 ```bash
+# C version
 gcc truth.c -o truth -lm
 ./truth  # generates truth.h
+
+# C++ version
+g++ truth.cpp -o truth_cpp -lm
+./truth_cpp  # generates truth.h
+
+# Or use Makefile
+make truth_cpp
 ```
 
 ### Perfect System
@@ -80,8 +88,16 @@ make ppr_cpp  # C++ version
 Compile the perfect trainer to regenerate perfect.h:
 
 ```bash
+# C version
 gcc perfect.c -o perfect -lm
 ./perfect  # generates perfect.h
+
+# C++ version
+g++ perfect.cpp -o perfect_cpp -lm
+./perfect_cpp  # generates perfect.h
+
+# Or use Makefile
+make perfect_cpp
 ```
 
 Ensure the corresponding header files (.h) are in the same directory as their respective source files.
