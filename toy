@@ -1,0 +1,9 @@
+#!/bin/sh
+# Simple infinite loop script for old UNIX/Bourne sh systems
+# Runs ./ptr every 60 seconds and pipes output to espeak
+
+while sleep 60
+do
+    ./ptr | espeak
+done
+
