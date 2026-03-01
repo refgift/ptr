@@ -55,9 +55,10 @@ For continuous truth prediction every 60 seconds with voice synthesis:
 while sleep 60; do ./ptr | espeak; done
 ```
 
-Or use the provided script:
+Or use the provided script (make it executable first):
 
 ```bash
+chmod +x toy
 ./toy
 ```
 
