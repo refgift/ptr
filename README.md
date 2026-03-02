@@ -1,6 +1,7 @@
 # ptr.c & ppr.c - Perceptron Truth and Perfect Predictors
 
-Simple C implementations of perceptrons trained to predict "truth" and "perfection" using hardware randomness (rdrand).
+Simple C implementations of perceptrons trained to predict "truth" and "perfection" using hardware randomness (rdrand). Note for the wary, perfect is broken, stick to truth.
+I thought perfect would work in a perceptron, but so far nothing. Pleae ignore the perfect and ppr programs until I figure it out: perfect must be like xor instead of and, or, not.
 
 ## Philosophy
 
