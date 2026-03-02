@@ -1,6 +1,6 @@
-# ptr.c & ppr.c - Perceptron Truth and Perfect Predictors
+# ptr.c - Perceptron Truth Detector
 
-Simple C implementations of perceptrons trained to predict "truth" and "perfection" using hardware randomness (rdrand).
+Simple C implementation of perceptron trained to predict "truth" using hardware randomness (rdrand).
 
 ## Philosophy
 
@@ -15,12 +15,6 @@ This project implements two perceptron systems trained on hardware-generated ran
 ### Truth System
 - `ptr.c` / `ptr.cpp`: Truth predictor implementation (C and C++ versions)
 - `truth.h`: Trained model weights and biases for truth prediction
-- `truth.c` / `truth.cpp`: Training programs that generate truth.h (C and C++ versions)
-
-### Perfect System
-- `ppr.c` / `ppr.cpp`: Perfect predictor implementation (C and C++ versions)
-- `perfect.h`: Trained model weights and biases for perfect prediction
-- `perfect.c` / `perfect.cpp`: Training programs that generate perfect.h (C and C++ versions)
 
 ### Shared Components
 - `toy`: Shell script for continuous execution (works with both systems)
@@ -38,67 +32,13 @@ Compile the C truth predictor:
 gcc ptr.c -o ptr -lm
 ```
 
-Or the C++ version:
-
-```bash
-g++ ptr.cpp -o ptr_cpp -lm
-```
 
 Or use Makefile:
 
 ```bash
-make ptr      # C version
-make ptr_cpp  # C++ version
+make       # C version
 ```
 
-Compile the truth trainer to regenerate truth.h:
-
-```bash
-# C version
-gcc truth.c -o truth -lm
-./truth  # generates truth.h
-
-# C++ version
-g++ truth.cpp -o truth_cpp -lm
-./truth_cpp  # generates truth.h
-
-# Or use Makefile
-make truth_cpp
-```
-
-### Perfect System
-Compile the C perfect predictor:
-
-```bash
-gcc ppr.c -o ppr -lm
-```
-
-Or the C++ version:
-
-```bash
-g++ ppr.cpp -o ppr_cpp -lm
-```
-
-Or use Makefile:
-
-```bash
-make ppr_cpp  # C++ version
-```
-
-Compile the perfect trainer to regenerate perfect.h:
-
-```bash
-# C version
-gcc perfect.c -o perfect -lm
-./perfect  # generates perfect.h
-
-# C++ version
-g++ perfect.cpp -o perfect_cpp -lm
-./perfect_cpp  # generates perfect.h
-
-# Or use Makefile
-make perfect_cpp
-```
 
 Ensure the corresponding header files (.h) are in the same directory as their respective source files.
 
@@ -113,14 +53,6 @@ Run the truth predictor:
 
 It will output "TRUTH" when the perceptron predicts truth, or nothing when it predicts false.
 
-### Perfect Predictor
-Run the perfect predictor:
-
-```bash
-./ppr
-```
-
-It will output "PERFECT" when the perceptron achieves perfection, or nothing otherwise.
 
 ### Continuous Mode
 
@@ -130,11 +62,6 @@ For continuous truth prediction every 60 seconds with voice synthesis:
 while sleep 60; do ./ptr | espeak; done
 ```
 
-For continuous perfect prediction:
-
-```bash
-while sleep 60; do ./ppr | espeak; done
-```
 
 Or use the provided script (make it executable first):
 
@@ -142,8 +69,6 @@ Or use the provided script (make it executable first):
 chmod +x toy
 ./toy  # works with ptr for truth prediction
 ```
-
-For perfect prediction with the toy script, modify it to use `./ppr` instead of `./ptr`.
 
 ### Alternative Audio
 
@@ -157,13 +82,6 @@ rec truth.wav
 while sleep 60; do ./ptr | xargs -I {} play truth.wav; done
 ```
 
-For perfect prediction:
-```bash
-# Record: say "PERFECT" into microphone
-rec perfect.wav
-# Play instead of espeak
-while sleep 60; do ./ppr | xargs -I {} play perfect.wav; done
-```
 
 ## Applications
 
@@ -172,12 +90,6 @@ while sleep 60; do ./ppr | xargs -I {} play perfect.wav; done
 - Combat misinformation through simple classification
 - Demonstrate perceptron capabilities
 - Educational tool for machine learning concepts
-
-### Perfect System
-- Achieve perfect predictions through enhanced training
-- Explore the boundaries of machine learning perfection
-- Compare truth vs. perfection prediction methodologies
-- Advanced educational tool for AI philosophy and constraints
 
 ## Limitations
 

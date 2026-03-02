@@ -1,5 +1,5 @@
-# Makefile for ptr.c and ptr.cpp perceptron predictors.
-# Makes ./ptr (C version) and ./ptr_cpp (C++ version), Linux terminal applications.
+# Makefile for ptr.c perceptron predictor.
+# Makes ./ptr (C version)  Linux terminal applications.
 # Windows can run Linux as a subsystem.
 # Remember Occam\'s Razor for programming miracles.
 
@@ -9,17 +9,5 @@
 ptr: 	ptr.o
 	cc $< -o $@ -lm
 
-.cpp.o:
-	g++ -c $< -o $@
-
-ptr_cpp:	ptr.cpp
-	g++ $< -o $@ -lm
-
-ppr_cpp:	ppr.cpp
-	g++ $< -o $@ -lm
-
-truth_cpp:	truth.cpp
-	g++ $< -o $@ -lm
-
-perfect_cpp:	perfect.cpp
-	g++ $< -o $@ -lm
+clean: 
+	rm *.o

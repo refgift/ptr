@@ -10,8 +10,8 @@
 #define ACTION_COUNT 2
 #define TRUTH 66
 
+int r;
 int rnd(){
-	int r;
 	char success;
 	asm volatile("rdrand %0; setc %1" : "=r"(r), "=qm"(success));
 	if (!success) {
