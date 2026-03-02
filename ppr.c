@@ -10,8 +10,9 @@
 #define ACTION_COUNT 2
 #define PERFECT 106
 
+static int r=0; // used by rnd();
 int rnd(){
-	int r;
+
 	char success;
 	asm volatile("rdrand %0; setc %1" : "=r"(r), "=qm"(success));
 	if (!success) {
