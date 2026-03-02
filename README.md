@@ -10,10 +10,15 @@ I began my computer journey in 1977 at Colony Square in midtown Atlanta with an 
 
 ## Technical Overview
 
-This project implements two perceptron systems trained on hardware-generated random numbers (rdrand):
+This project implements 1 perceptron system trained on hardware-generated random numbers (rdrand instruction opcode): The perceptron has been
+pretrained by me. My theory is that reality is at equilibrium, the computer entropy is a measure of equilibrium  thus reality. I train
+on randomness instead of cats, dogs, numbers, letters, just random numbers from the hardware rdrand opcode. 
+It works for "truth" but fails for "perfect". Running toy with a fast time like 13 seconds instead of it's default of 60 seconds will
+give some confidence that it detects truth very well in your reality.
 
+ 
 ### Truth System
-- `ptr.c` / `ptr.cpp`: Truth predictor implementation (C and C++ versions)
+- `ptr.c` : Truth predictor implementation
 - `truth.h`: Trained model weights and biases for truth prediction
 
 ### Shared Components
