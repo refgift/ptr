@@ -16,7 +16,12 @@
 
 int rnd(){
 	int r;
-	asm("1: rdrand %0; jnc 1":"=r"(r));
+	char success;
+	asm volatile("rdrand %0; setc %1" : "=r"(r), "=qm"(success));
+	if (!success) {
+		// Fallback if rdrand fails
+		r = rand();
+	}
 	return r;
 }
 
