@@ -2,8 +2,8 @@
 # Simple infinite loop script for old UNIX/Bourne sh systems
 # Runs ./ptr every 60 seconds and pipes output to espeak
 
-while sleep 60
+while sleep  13
 do
-    ./ptr | espeak
+    ./ptr | espeak -a200
 done
 
