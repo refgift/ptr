@@ -1,4 +1,4 @@
-# ptr.c - Perceptron Truth Detector
+# ptr.c - Adjusting on the fly / Micro-changes keep us true / Never losing course
 
 Simple C implementation of perceptron trained to predict "truth" using hardware randomness (rdrand).
 
