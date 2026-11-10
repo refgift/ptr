@@ -1,7 +1,7 @@
 # ptr.c - Adjusting on the fly / Micro-changes keep us true / Never losing course
 
 Simple C implementation of perceptron trained to predict "truth" using hardware randomness (rdrand).
-- Running this using the "tpy" script is a level 2 AI operating the principle: "The truth will set you free"
+- Running this using the "toy" script is a level 2 AI operating the principle: "The truth will set you free"
 - See licensetest.ai for the 10 levels of AI.
 
 ## Philosophy
