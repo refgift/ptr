@@ -1,12 +1,13 @@
 # ptr.c - Adjusting on the fly / Micro-changes keep us true / Never losing course
 
 Simple C implementation of perceptron trained to predict "truth" using hardware randomness (rdrand).
+- Running this using the "tpy" script is a level 2 AI operating the principle: "The truth will set you free"
+- See licensetest.ai for the 10 levels of AI.
 
 ## Philosophy
 
-Programming is my secular religion. In a world where one must answer secular questions, computer programming books serve as holy scriptures that are permitted because they are secular. This exists because of the separation of Church and State - the state leader only hears secular arguments.
-
-I began my computer journey in 1977 at Colony Square in midtown Atlanta with an IBM 5110 desktop computer, its 8" diskette drives resting on the floor beside the desk. Programming remains a secular religion for the separation of Church and State.
+The AI is simple intellence with the advantage that it runs continuously and operates a principle, a software, a robot, a vehicle, etc. depending
+on how intelligent and computable it is.
 
 ## Technical Overview
 
@@ -20,7 +21,7 @@ It works for "truth" but fails for "perfect".
 - `truth.h`: Trained model weights and biases for truth prediction
 
 ### Shared Components
-- `toy`: Shell script for continuous execution (works with both systems)
+- `toy`: Shell script for continuous execution (operating a principle)
 
 ### Why Perceptrons?
 
@@ -96,13 +97,13 @@ while sleep 60; do ./ptr | xargs -I {} play truth.wav; done
 
 ## Limitations
 
-Perceptrons handle simple logic operations (AND, OR, NOT) but fail on complex logic like XOR. However, they work well for single-word, if it is a reality word, detection and can solve many real-world problems when properly applied. The counter example was the lesson of PERFECT, a word that fails to detect with my perceptron training.
-IMPERFECT might work better...into the thought pot.
+Perceptrons handle simple logic operations (AND, OR, NOT) but fail on complex logic like XOR. 
 
-## Philosophy Continued
 
-This work teaches Occam's Razor - the only razor in humanity that stands the test of time. Programming began with C in the 1970s; C++ followed in 1982. C is the old religion (wisdom/wicca), C++ the new religion. Progressing from C to C++ represents advancement in programming wisdom.
 
-Many programs lack truth awareness. By training on actual randomness, this perceptron achieves genuine results. Predicting truth eliminates GIGO (Garbage In, Garbage Out) and finds equilibrium truth.
 
-The perceptron finds truth existing at equilibrium - first-order truth and beyond exists in the thinking pot. This proves perceptrons remain valuable despite Minsky's conclusions, offering a path to solve world problems through simplicity.
+
+
+
+
+
